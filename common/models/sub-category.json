@@ -1,0 +1,32 @@
+{
+  "name": "SubCategory",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "subCategoryName": {
+      "type": "string",
+      "required": true
+    },
+    "Description": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "category": {
+      "type": "belongsTo",
+      "model": "Category",
+      "foreignKey": "categoryId"
+    },
+    "products": {
+      "type": "hasMany",
+      "model": "Product",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

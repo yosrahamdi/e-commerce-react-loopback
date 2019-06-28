@@ -1,0 +1,44 @@
+{
+  "name": "Order",
+  "base": "PersistedModel",
+  "idInjection":false,
+  "options": {
+    "validateUpsert":false
+  },
+  "properties": {
+    "customerId": {
+      "type": "string",
+      "required":true
+    },
+    "orderNumber": {
+      "type": "number"
+    },
+    "orderDate": {
+      "type": "date",
+      "required":false
+    },
+    "shipDate": {
+      "type": "date"
+    },
+    "Paid": {
+      "type": "boolean",
+      "required":true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "orderDetails": {
+      "type": "hasMany",
+      "model": "OrderDetail",
+      "foreignKey": ""
+    },
+    "customer": {
+      "type": "belongsTo",
+      "model": "Customer",
+      "foreignKey": ""
+    }
+  },
+  "acls": [
+  ],
+  "methods": {}
+}

@@ -1,0 +1,82 @@
+{
+  "name": "Product",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "productName": {
+      "type": "string",
+      "required": true
+    },
+    "productDescription": {
+      "type": "string"
+    },
+    "supplierId": {
+      "type": "string",
+      "required": true
+    },
+    "categorieId": {
+      "type": "string",
+      "required": true
+    },
+    "subCategorieId": {
+      "type": "string",
+      "required": true
+    },
+    "quantity": {
+      "type": "number",
+      "required": true
+    },
+    "price": {
+      "type": "number",
+      "required": true
+    },
+    "availableSize": {
+      "type": [
+        "string"
+      ]
+    },
+    "availableColors": {
+      "type": [
+        "string"
+      ]
+    },
+    "Size": {
+      "type": "string"
+    },
+    "color": {
+      "type": "string"
+    },
+    "picture": {
+      "type": "object"
+    },
+    "ranking": {
+      "type": "number"
+    },
+    "rating": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "subCategory": {
+      "type": "belongsTo",
+      "model": "SubCategory",
+      "foreignKey": "subCategoryId"
+    },
+    "orderDetails": {
+      "type": "hasMany",
+      "model": "OrderDetail",
+      "foreignKey": ""
+    },
+    "supplier": {
+      "type": "belongsTo",
+      "model": "Supplier",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

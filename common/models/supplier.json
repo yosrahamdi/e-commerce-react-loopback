@@ -1,0 +1,41 @@
+{
+  "name": "Supplier",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "companyName": {
+      "type": "string",
+      "required": true
+    },
+    "contactFName": {
+      "type": "string"
+    },
+    "contactLName": {
+      "type": "string"
+    },
+    "address": {
+      "type": "object",
+      "required": true
+    },
+    "Phone": {
+      "type": "number",
+      "required": true
+    },
+    "Email": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "products": {
+      "type": "hasMany",
+      "model": "Product",
+      "foreignKey": "productId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

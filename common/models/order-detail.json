@@ -1,0 +1,45 @@
+{
+  "name": "OrderDetail",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "OrderId": {
+      "type": "string",
+      "required": true
+    },
+    "productId": {
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "type": "number",
+      "required": true
+    },
+    "quantity": {
+      "type": "number",
+      "required": true
+    },
+    "total": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "products": {
+      "type": "belongsTo",
+      "model": "Product",
+      "foreignKey": ""
+    },
+    "order": {
+      "type": "belongsTo",
+      "model": "Order",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
