@@ -33,9 +33,22 @@
     "products": {
       "type": "hasMany",
       "model": "Product",
-      "foreignKey": "productId"
+      "foreignKey": "supplierId"
     }
   },
-  "acls": [],
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "admin2",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    }
+  ],
   "methods": {}
 }

@@ -69,14 +69,27 @@
     "orderDetails": {
       "type": "hasMany",
       "model": "OrderDetail",
-      "foreignKey": ""
+      "foreignKey": "productId"
     },
     "supplier": {
       "type": "belongsTo",
       "model": "Supplier",
-      "foreignKey": ""
+      "foreignKey": "supplierId"
     }
   },
-  "acls": [],
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "admin2",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    }
+  ],
   "methods": {}
 }

@@ -19,9 +19,22 @@
     "subCategories": {
       "type": "hasMany",
       "model": "SubCategory",
-      "foreignKey": ""
+      "foreignKey": "categoryId"
     }
   },
-  "acls": [],
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "admin2",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    }
+  ],
   "methods": {}
 }

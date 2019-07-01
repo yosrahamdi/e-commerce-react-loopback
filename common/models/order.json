@@ -1,28 +1,24 @@
 {
   "name": "Order",
   "base": "PersistedModel",
-  "idInjection":false,
+  "idInjection": false,
   "options": {
-    "validateUpsert":false
+    "validateUpsert": false
   },
   "properties": {
-    "customerId": {
-      "type": "string",
-      "required":true
-    },
     "orderNumber": {
       "type": "number"
     },
     "orderDate": {
       "type": "date",
-      "required":false
+      "required": false
     },
     "shipDate": {
       "type": "date"
     },
     "Paid": {
       "type": "boolean",
-      "required":true
+      "required": true
     }
   },
   "validations": [],
@@ -30,15 +26,27 @@
     "orderDetails": {
       "type": "hasMany",
       "model": "OrderDetail",
-      "foreignKey": ""
+      "foreignKey": "orderId"
     },
     "customer": {
       "type": "belongsTo",
       "model": "Customer",
-      "foreignKey": ""
+      "foreignKey": "customerId"
     }
   },
   "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "admin2",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    }
   ],
   "methods": {}
 }
