@@ -19,13 +19,22 @@
     "Paid": {
       "type": "boolean",
       "required": true
+    },
+    "quantity": {
+      "type": "number",
+      "required": true
+    },
+    "totalPrice": {
+      "type": "number",
+      "required": true
     }
+  
   },
   "validations": [],
   "relations": {
-    "orderDetails": {
+    "products": {
       "type": "hasMany",
-      "model": "OrderDetail",
+      "model": "Product",
       "foreignKey": "orderId"
     },
     "customer": {

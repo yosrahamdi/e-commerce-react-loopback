@@ -19,7 +19,7 @@
       "required": false
     },
     "birthDate": {
-      "type": "date",
+      "type": "string",
       "required": false
     }
   },

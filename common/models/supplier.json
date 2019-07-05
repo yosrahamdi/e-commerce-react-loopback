@@ -17,12 +17,10 @@
       "type": "string"
     },
     "address": {
-      "type": "object",
-      "required": true
+      "type": "string"
     },
     "Phone": {
-      "type": "number",
-      "required": true
+      "type": "number"
     },
     "Email": {
       "type": "string"

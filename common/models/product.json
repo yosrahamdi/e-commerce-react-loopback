@@ -13,18 +13,7 @@
     "productDescription": {
       "type": "string"
     },
-    "supplierId": {
-      "type": "string",
-      "required": true
-    },
-    "categorieId": {
-      "type": "string",
-      "required": true
-    },
-    "subCategorieId": {
-      "type": "string",
-      "required": true
-    },
+
     "quantity": {
       "type": "number",
       "required": true
@@ -52,9 +41,6 @@
     "picture": {
       "type": "object"
     },
-    "ranking": {
-      "type": "number"
-    },
     "rating": {
       "type": "number"
     }
@@ -66,10 +52,10 @@
       "model": "SubCategory",
       "foreignKey": "subCategoryId"
     },
-    "orderDetails": {
-      "type": "hasMany",
+    "order": {
+      "type": "belongsTo",
       "model": "OrderDetail",
-      "foreignKey": "productId"
+      "foreignKey": "orderId"
     },
     "supplier": {
       "type": "belongsTo",

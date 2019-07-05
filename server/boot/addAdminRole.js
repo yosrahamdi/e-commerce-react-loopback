@@ -17,7 +17,7 @@ module.exports = function(app) {
         {firstName: 'Admin2', email: "admin2@admin.com", password: "admin" }, 
               function(err, instance) {
             if (err) return console.error(err);
-            console.log('Customer created: ', instance);
+           // console.log('Customer created: ', instance);
 
           //create the admin role
     Role.findOrCreate({where: {name: 'admin2'}},{
@@ -25,16 +25,16 @@ module.exports = function(app) {
       }, function(err, role) {
         if (err) throw err;
   
-        console.log('Created role:', role);
+      //  console.log('Created role:', role);
   
-        //make bob an admin
+     
         role.principals.create({
           principalType: RoleMapping.USER,
           principalId: instance.id
         }, function(err, principal) {
           if (err) throw err;
   
-          console.log('Created principal:', principal);
+         // console.log('Created principal:', principal);
         });
       });
     });

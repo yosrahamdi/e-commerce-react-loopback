@@ -13,12 +13,16 @@
   "dependencies": {
     "compression": "^1.0.3",
     "cors": "^2.5.2",
+    "create-react-app": "^3.0.1",
+    "faker": "^4.1.0",
     "helmet": "^3.10.0",
     "loopback": "^3.22.0",
     "loopback-boot": "^2.6.5",
     "loopback-component-explorer": "^6.2.0",
     "loopback-connector-mongodb": "^4.2.0",
+    "loopback-filters": "^1.0.0",
     "nodemon": "^1.19.1",
+    "react-loopback": "^0.4.0",
     "serve-favicon": "^2.0.1",
     "strong-error-handler": "^3.0.0"
   },

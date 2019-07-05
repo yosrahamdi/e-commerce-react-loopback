@@ -59,12 +59,8 @@
     "dataSource": "mongoDs",
     "public": true
   },
-  "OrderDetail": {
-    "dataSource": "mongoDs",
-    "public": true
-  },
   "address": {
     "dataSource": "mongoDs",
-    "public": true
+    "public": false
   }
 }
