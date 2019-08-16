@@ -62,5 +62,9 @@
   "address": {
     "dataSource": "mongoDs",
     "public": true
+  },
+  "container": {
+    "dataSource": "myfile",
+    "public": true
   }
 }

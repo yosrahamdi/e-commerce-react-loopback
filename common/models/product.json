@@ -8,22 +8,18 @@
   "properties": {
     "productName": {
       "type": "string",
-      "required": true,
-      "content": "faker.lorem.words()"
+      "required": true
     },
     "productDescription": {
-      "type": "string",
-      "content": "faker.lorem.sentence()"
+      "type": "string"
     },
     "quantity": {
       "type": "number",
-      "required": true,
-      "content": "faker.random.number()"
+      "required": true
     },
     "price": {
       "type": "number",
-      "required": true,
-      "content": "faker.commerce.price()"
+      "required": true
     },
     "availableSize": {
       "type": [
@@ -42,12 +38,11 @@
       "type": "string"
     },
     "picture": {
-      "type": "object",
-      "content": "faker.image.fashion()"
+      "type": "string"
+     
     },
     "rating": {
-      "type": "number",
-      "content": "faker.random.number(10)"
+      "type": "number"
     }
   },
   "validations": [],
@@ -74,12 +69,6 @@
       "principalType": "ROLE",
       "principalId": "admin2",
       "permission": "ALLOW"
-    },
-    {
-      "accessType": "*",
-      "principalType": "ROLE",
-      "principalId": "$everyone",
-      "permission": "DENY"
     }
   ],
   "methods": {}

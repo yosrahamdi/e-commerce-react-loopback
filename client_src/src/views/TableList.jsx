@@ -3,8 +3,23 @@ import { Container, Row, Col, Table } from "react-bootstrap";
 
 import Card from "../components/Card/Card.jsx";
 import { thArray, tdArray } from "../variables/Variables.jsx";
-
+import Axios from "axios";
 class TableList extends Component {
+
+  state={
+    products: [],
+    headers: ["name", "price"]
+};
+
+componentDidMount(){
+    Axios.get("http://localhost:3000/api/Products")
+    .then(result => {
+        if(result.status === 200){
+            this.setState({products: result.data})
+        }
+        
+    })
+}
   render() {
     return (
       <div className="content">
@@ -20,18 +35,17 @@ class TableList extends Component {
                   <Table striped hover>
                     <thead>
                       <tr>
-                        {thArray.map((prop, key) => {
+                        {this.state.headers.map((prop, key) => {
                           return <th key={key}>{prop}</th>;
                         })}
                       </tr>
                     </thead>
                     <tbody>
-                      {tdArray.map((prop, key) => {
+                      {this.state.products.map((prop, key) => {
                         return (
                           <tr key={key}>
-                            {prop.map((prop, key) => {
-                              return <td key={key}>{prop}</td>;
-                            })}
+                            <td>{prop.productName}</td>
+                            <td>{prop.price}</td>
                           </tr>
                         );
                       })}

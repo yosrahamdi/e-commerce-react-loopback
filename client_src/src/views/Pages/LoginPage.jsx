@@ -50,7 +50,8 @@ class LoginPage extends Component{
           //todo: check how to put the access token in all the request automatically
           // axios.defaults.headers.common['Authorization'] = res.data.data.id;
           this.setState({ isLoading: false });
-          this.props.history.push('/dashboard');
+          localStorage.setItem('jwt', res.data.id);
+          this.props.history.push('/admin/dashboard');
         }else{
           throw(res.status);
         }

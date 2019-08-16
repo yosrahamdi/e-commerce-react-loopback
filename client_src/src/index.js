@@ -1,7 +1,7 @@
-import React from "react";
+import React, { Component } from "react";
 import ReactDOM from "react-dom";
 
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./assets/css/animate.min.css";
@@ -15,14 +15,44 @@ import Ph from './containers/phones';
 import App from './App';
 import {ProductProvider} from './Context';
 import * as serviceWorker from "./serviceWorker";
+import { resolveTypeReferenceDirective } from "typescript";
 
+
+const PrivateRoute = ({component: Component, ...rest}) => (
+  <Route
+  {...rest}
+  render={props => {
+    return isAuthenticated() ? (
+      <Component {...props} />
+    ) : (
+      <Redirect 
+        to={{
+          pathname: "/Login",
+          //state: { from: props.location}
+        }}
+        />
+    )
+  }
+
+  }
+  />
+)
+
+function isAuthenticated(){
+  const jwt = localStorage.getItem(  'jwt');
+  if ( jwt) {
+    return true;
+  }
+  return false 
+;}
 
 ReactDOM.render(
   <div>
   
   <BrowserRouter>
       <Switch>
-      <Route path="/admin" render={props => <AdminLayout {...props} />} />
+        {/* privateroute */}
+      <PrivateRoute path="/admin" component={AdminLayout} />
       <Route name="Login" path="/Login" component={Pages} />
       <Route path="/ph" component={Ph} />
       <Route path="/" component={App} />

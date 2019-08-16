@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {storeProducts, detailProduct} from './data';
+import Axios from 'axios';
 
 
 const ProductContext = React.createContext();
@@ -8,9 +9,19 @@ const ProductContext = React.createContext();
 class ProductProvider extends Component{
 
     state={
-        products: storeProducts, 
+        products: [], 
         detailProduct: detailProduct
     };
+
+    componentDidMount(){
+        Axios.get("http://localhost:3000/api/Products")
+        .then(result => {
+            if(result.status === 200){
+                this.setState({products: result.data})
+            }
+            
+        })
+    }
 
     handleDetail = () => {
         console.log('hello det');

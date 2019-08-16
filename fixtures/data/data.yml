@@ -50,14 +50,59 @@ Order:
 
          
 Product:
-  Product{1..30}:
-          productName: "{{lorem.words}}" 
+  Product{1..3}:
+          productName: "{{lorem.word}}" 
           productDescription: "{{lorem.sentence}}" 
           quantity: "{{random.number}}"
           price: "{{commerce.price}}"
-          picture: "{{image.fashion}}"
+          picture: "{{image.technics}}"
           rating: "{{random.number(10)}}"
           supplierId: @Supplier.*
-          subCategoryId: @SubCategory.*
+          subCategoryId: @SubCategory1
           orderId: @Order.*
+
+  Product{4..7}:   
+          productName: "{{lorem.word}}" 
+          productDescription: "{{lorem.sentence}}" 
+          quantity: "{{random.number}}"
+          price: "{{commerce.price}}"
+          picture: "{{image.nature}}"
+          rating: "{{random.number(10)}}"
+          supplierId: @Supplier.*
+          subCategoryId: @SubCategory2
+          orderId: @Order.*
+
+  Product{8..10}:
+          productName: "{{lorem.word}}" 
+          productDescription: "{{lorem.sentence}}" 
+          quantity: "{{random.number}}"
+          price: "{{commerce.price}}"
+          picture: "{{image.food}}"
+          rating: "{{random.number(10)}}"
+          supplierId: @Supplier.*
+          subCategoryId: @SubCategory3
+          orderId: @Order.*
+
+  Product{11..13}:
+          productName: "{{lorem.word}}" 
+          productDescription: "{{lorem.sentence}}" 
+          quantity: "{{random.number}}"
+          price: "{{commerce.price}}"
+          picture: "{{image.transport}}"
+          rating: "{{random.number(10)}}"
+          supplierId: @Supplier.*
+          subCategoryId: @SubCategory4
+          orderId: @Order.*
+
+  Product{14..16}:
+          productName: "{{lorem.word}}" 
+          productDescription: "{{lorem.sentence}}" 
+          quantity: "{{random.number}}"
+          price: "{{commerce.price}}"
+          picture: "{{image.food}}"
+          rating: "{{random.number(10)}}"
+          supplierId: @Supplier.*
+          subCategoryId: @SubCategory4
+          orderId: @Order.*
+
             
