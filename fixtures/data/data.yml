@@ -1,0 +1,63 @@
+Category:
+  Category{1..3}:                             
+    categoryName: "{{random.word}}" 
+    Description: "{{lorem.sentence}}"
+
+
+SubCategory:
+  SubCategory{1..5}:
+   subCategoryName: "{{random.word}}"
+   Description: "{{lorem.sentence}}"
+   categoryId: @Category.*     
+   
+
+address:
+  address{1..50}:
+     street: "{{address.streetName}}"
+     city: "{{address.city}}"
+     state: "{{address.state}}"
+     zipCode: "{{address.zipCode}}"
+     
+Customer:
+  Customer{1..50}:
+         firstName: "{Second-data{@}}" 
+         lastName: "{{name.lastName}}"  
+         phone: "{{phone.phoneNumber}}"
+         birthDate: "{{date.past}}"
+         email: "{{internet.email}}"
+         password: "{Customer{@}}"
+         addressId: @address.*
+
+Supplier:
+  Supplier{1..5}:
+        companyName: "{{company.companyName}}" 
+        contactFName: "{{name.firstName}}" 
+        contactLName: "{{name.lastName}}" 
+        address: "{{address.streetName}}"
+        Phone: "{{phone.phoneNumberFormat}}"
+        Email: "{{internet.email}}"
+
+        
+Order:
+  Order{1..10}:
+         orderNumber: "{{random.number }}"
+         orderDate: "{{date.recent}}"
+         shipDate: "{{date.future}}"
+         Paid: false
+         customerId: @Customer.*
+
+
+
+         
+Product:
+  Product{1..30}:
+          productName: "{{lorem.words}}" 
+          productDescription: "{{lorem.sentence}}" 
+          quantity: "{{random.number}}"
+          price: "{{commerce.price}}"
+          picture: "{{image.fashion}}"
+          rating: "{{random.number(10)}}"
+          supplierId: @Supplier.*
+          subCategoryId: @SubCategory.*
+          orderId: @Order.*
+            

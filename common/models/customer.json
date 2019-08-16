@@ -8,19 +8,23 @@
   "properties": {
     "firstName": {
       "type": "string",
-      "required": true
+      "required": true,
+      "content": "faker.name.firstName()"
     },
     "lastName": {
       "type": "string",
-      "required": false
+      "required": false,
+      "content": "faker.name.lastName()"
     },
     "phone": {
       "type": "number",
-      "required": false
+      "required": false,
+      "content": "faker.phone.phoneNumber()"
     },
     "birthDate": {
       "type": "string",
-      "required": false
+      "required": false,
+      "content": "faker.date.past()"
     }
   },
   "validations": [],
@@ -31,13 +35,9 @@
       "foreignKey": "customerId"
     },
     "address": {
-      "type": "embedsOne",
+      "type": "hasOne",
       "model": "address",
-      "property": "billingAddress",
-      "options": {
-        "validate": true,
-        "forceId": false
-      }
+      "foreignKey": "addressId"
     }
   },
   "acls": [
@@ -48,10 +48,17 @@
       "permission": "ALLOW"
     },
     {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "login"
+    },
+    {
       "accessType": "*",
       "principalType": "ROLE",
       "principalId": "$everyone",
-      "permission": "DENY"
+      "permission": "ALLOW"
     }
   ],
   "methods": {}

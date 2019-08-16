@@ -8,22 +8,28 @@
   "properties": {
     "companyName": {
       "type": "string",
-      "required": true
+      "required": true,
+      "content": "faker.company.companyName()"
     },
     "contactFName": {
-      "type": "string"
+      "type": "string",
+      "content": "faker.name.firstName()"
     },
     "contactLName": {
-      "type": "string"
+      "type": "string",
+      "content": "faker.name.lastName()"
     },
     "address": {
-      "type": "string"
+      "type": "string",
+      "address": "faker.address.streetName()"
     },
     "Phone": {
-      "type": "number"
+      "type": "number",
+      "content": "faker.phone.phoneNumberFormat()"
     },
     "Email": {
-      "type": "string"
+      "type": "string",
+      "content": "faker.internet.email()"
     }
   },
   "validations": [],

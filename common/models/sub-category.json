@@ -8,10 +8,12 @@
   "properties": {
     "subCategoryName": {
       "type": "string",
-      "required": true
+      "required": true,
+      "content": "faker.random.word()"
     },
     "Description": {
-      "type": "string"
+      "type": "string",
+      "content": "faker.lorem.sentence()"
     }
   },
   "validations": [],
@@ -27,19 +29,6 @@
       "foreignKey": "productId"
     }
   },
-  "acls": [
-    {
-      "accessType": "*",
-      "principalType": "ROLE",
-      "principalId": "admin2",
-      "permission": "ALLOW"
-    },
-    {
-      "accessType": "*",
-      "principalType": "ROLE",
-      "principalId": "$everyone",
-      "permission": "DENY"
-    }
-  ],
+  "acls": [],
   "methods": {}
 }

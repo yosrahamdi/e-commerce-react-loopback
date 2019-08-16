@@ -8,19 +8,22 @@
   "properties": {
     "productName": {
       "type": "string",
-      "required": true
+      "required": true,
+      "content": "faker.lorem.words()"
     },
     "productDescription": {
-      "type": "string"
+      "type": "string",
+      "content": "faker.lorem.sentence()"
     },
-
     "quantity": {
       "type": "number",
-      "required": true
+      "required": true,
+      "content": "faker.random.number()"
     },
     "price": {
       "type": "number",
-      "required": true
+      "required": true,
+      "content": "faker.commerce.price()"
     },
     "availableSize": {
       "type": [
@@ -39,10 +42,12 @@
       "type": "string"
     },
     "picture": {
-      "type": "object"
+      "type": "object",
+      "content": "faker.image.fashion()"
     },
     "rating": {
-      "type": "number"
+      "type": "number",
+      "content": "faker.random.number(10)"
     }
   },
   "validations": [],

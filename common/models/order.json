@@ -7,14 +7,17 @@
   },
   "properties": {
     "orderNumber": {
-      "type": "number"
+      "type": "number",
+      "content": "faker.random.number()"
     },
     "orderDate": {
       "type": "date",
-      "required": false
+      "required": false,
+      "content": "faker.date.recent()"
     },
     "shipDate": {
-      "type": "date"
+      "type": "date",
+      "content": "faker.date.future()"
     },
     "Paid": {
       "type": "boolean",
@@ -22,13 +25,12 @@
     },
     "quantity": {
       "type": "number",
-      "required": true
+      "required": false
     },
     "totalPrice": {
       "type": "number",
-      "required": true
+      "required": false
     }
-  
   },
   "validations": [],
   "relations": {

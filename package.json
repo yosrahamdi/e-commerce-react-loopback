@@ -21,14 +21,11 @@
     "loopback-component-explorer": "^6.2.0",
     "loopback-connector-mongodb": "^4.2.0",
     "loopback-filters": "^1.0.0",
+    "loopback-fixtures": "0.0.14",
     "nodemon": "^1.19.1",
     "react-loopback": "^0.4.0",
     "serve-favicon": "^2.0.1",
     "strong-error-handler": "^3.0.0"
-  },
-  "devDependencies": {
-    "eslint": "^3.17.1",
-    "eslint-config-loopback": "^8.0.0"
   },
   "repository": {
     "type": "",

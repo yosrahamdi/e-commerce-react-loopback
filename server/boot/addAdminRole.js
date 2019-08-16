@@ -8,8 +8,8 @@ module.exports = function(app) {
   
     // define a custom scope
     
-    app.dataSources.mongoDs.automigrate('Customer', function(err) {
-      if (err) throw err;
+   
+      
   
       
         //create Customer
@@ -38,5 +38,5 @@ module.exports = function(app) {
         });
       });
     });
-      });
+ 
     };
